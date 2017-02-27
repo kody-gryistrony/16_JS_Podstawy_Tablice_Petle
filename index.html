@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+	//powtorzenie
+	// var a = 5;
+	// var b = 6;
+
+	// function math(c,d){
+	// 	return c+d;
+	// }
+
+
+	// console.log(math(a,b));
+
+	// function maks(a,b){
+	// 	if(a>b) {
+	// 		return a;
+	// 	} else{
+	// 		return b;
+	// 	}
+	// };
+ 	
+
+
+	function maks3(a,b,c){
+		if(a>b && a>c){
+			return a;
+		} else if(b>c){
+			return b;
+		} else{
+			return c;
+		}
+	};
+	//console.log(maks3(9,6,2));
+
+	// tablica pozwala nam przechowywać wiele elementów w uporządkowany sposób
+	var tablica = ["Magda", "Ania", "Kasia"];
+
+	// console.log(tablica);
+
+	// odwołanie się do elementu tablicy następuje przez wskazanie jego indeksu: pamiętaj, że indeksy zaczynają się od zera
+	// console.log(tablica[0]);
+
+	var liczby = [ 2, 3, 45, 6, 78];
+	//tablica ma długość 5
+	var dlugoscTablicy = 5;
+
+	// function liczbyZTablicy(){
+	// 	var pozycjaWTablicy = 0;
+
+	// 	while(pozycjaWTablicy < dlugoscTablicy){
+
+	// 		console.log(liczby[pozycjaWTablicy]);
+
+	// 		pozycjaWTablicy = pozycjaWTablicy + 1;
+	// 	}
+	// };
+
+	// while(warunek){
+	// 	dopóki warunek jest spełniony robi się pętla;
+	// }
+
+	// function maksZTablicy(){
+	// 	var pozycja = 0;
+	// 	var wynik;
+	// 	while(pozycja < dlugoscTablicy){
+
+		//to jest niefajne, bo pozycja+1 wywala nas z tablicy dla 4 elementu, więc nie możemy go sprawdzić
+	// 		if(liczby[pozycja] > liczby[pozycja+1]){
+	// 			wynik = liczby[pozycja];
+	// 		};
+	// 		pozycja = pozycja + 1;
+	// 	}
+	// 	return wynik;
+	// }
+
+	function maksZTablicy(){
+		var pozycja = 4;
+		var wynik = liczby[0];
+		while(pozycja >= 0){
+			//jak będziemy sprawdzać tablicę w doł, łatwiej nam kontrolować, w którym miejscu jesteśmy
+			if(liczby[pozycja] > wynik){
+				wynik = liczby[pozycja];
+			}
+
+			pozycja = pozycja - 1;
+		};
+		return wynik;
+	};
+	console.log(maksZTablicy());
+
+	function maks(tablica){
+		var pozycja = tablica.length-1;
+		var wynik = tablica[0];
+		while(pozycja >= 0){
+			if(tablica[pozycja] > wynik){
+				wynik = tablica[pozycja];
+			}
+			//zmniejszanie o 1
+			pozycja--;
+		};
+		return wynik;
+	};
+	var tab = [2,3,4,5,6,78,89,0,0.124,45465.3, 2];
+	console.log(maks(tab));
+
+
+	// while(warunek jest spełniony){
+	// 	rób rzeczy;
+	// };
+
+	function maks2(tablica){
+		var wynik = tablica[0];
+
+		for(var pozycja = tablica.length-1; pozycja >=0; pozycja--) {
+
+			if(tablica[pozycja] > wynik){
+				wynik = tablica[pozycja];
+			}
+		}
+		return wynik;
+	}
+
+	console.log(maks(tab));
+	
+	// for(var n=1; n < 10; n++){
+	// 	for( var m =1; m < 10; m++ ){
+	// 		console.log(m*n);
+	// 	}
+	// };
+
+	var samochod = {
+					marka: "Volvo",
+					kolor: "zielony",
+					naped: "4x4", 
+					czyJedzie: function(){
+						if(this.naped == "4x4"){
+							return true;
+						} else{
+							return false;
+						}
+					}
+	};
+
+	console.log(samochod.kolor + " "+ samochod.marka+" "+ samochod.czyJedzie());
+
+</script>
+</body>
+</html>
